@@ -13,6 +13,7 @@ export class Navbar {
     readonly contactUs : Locator
     readonly loggedIn : Locator
     readonly deleteAccount : Locator
+    readonly logout : Locator
 
 
     constructor(page:Page){
@@ -25,8 +26,9 @@ export class Navbar {
         this.apiTesting = page.getByRole('link', {name:' API Testing'})
         this.videoTutorials = page.getByRole('link', {name:' Video Tutorials'})
         this.contactUs = page.getByRole('link', {name:' Contact us'})
-        this.loggedIn = page.getByRole('link', { name: /Logged in as/ });
+        this.loggedIn = page.locator('.fa.fa-user');
         this.deleteAccount = page.getByRole('link', {name: ' Delete Account'})
+        this.logout = page.getByRole('link', {name:' Logout'})
     }
 
     async menu(menuName) {
@@ -57,6 +59,9 @@ export class Navbar {
                 break
             case "Logged In" :
                 await this.loggedIn.click()
+                break
+            case "Logout" :
+                await this.logout.click()
                 break
             case "Delete Account" :
                 await this.deleteAccount.click()
