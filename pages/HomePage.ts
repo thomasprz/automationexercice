@@ -16,13 +16,6 @@ export class HomePage {
     }
 
     async popup() {
-        try {
-            // Attendre que la modale soit visible
-            await this.page.waitForSelector('button:has-text("Consent")', { state: 'visible', timeout: 5000 });
-    
-            // Cliquer sur le bouton "Consent"
-            await this.page.click('button:has-text("Consent")');
-        } catch (error) {
-        }
+                await this.page.click('button:has-text("Consent")');
     }
 }
