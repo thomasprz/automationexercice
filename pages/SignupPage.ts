@@ -43,7 +43,7 @@ export class SignupPage {
         this.cityInput = page.locator('#city')
         this.zipcodeInput = page.locator('#zipcode')
         this.phoneInput = page.locator('#mobile_number')
-        this.createAccountButton = page.getByRole('button', {name:'Create Account'})
+        this.createAccountButton = page.getByRole('button', {name:'Create Account'})        
     }
 
     async enterAccountInformation() {
