@@ -4,7 +4,7 @@ import { Navbar } from '../components/Navbar'
 import { LoginPage } from '../pages/LoginPage'
 import { DeleteAccountPage } from '../pages/DeleteAccountPage'
 
-test.describe('Login User', async () => {
+test.describe('Login User', () => {
     let homepage : HomePage
     let loginpage : LoginPage
     let navbar : Navbar
