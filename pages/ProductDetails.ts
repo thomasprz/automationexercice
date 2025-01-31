@@ -9,6 +9,9 @@ export class ProductDetailsPage {
     readonly availability : Locator
     readonly condition : Locator
     readonly brand : Locator
+    readonly quantityInput : Locator
+    readonly addToCartButton : Locator
+    readonly viewCart : Locator
 
     constructor(page:Page){
         this.page = page
@@ -18,8 +21,15 @@ export class ProductDetailsPage {
         this.availability = page.locator('.product-information p', { hasText: 'Availability:' });
         this.condition =  page.locator('.product-information p', { hasText: 'Condition:' });
         this.brand = page.locator('.product-information p', { hasText: 'Brand:' });
+        this.quantityInput = page.locator('#quantity')
+        this.addToCartButton = page.locator('.cart')
+        this.viewCart = page.locator('text=View Cart')
+    }
 
+        async increaseQuantity(){
+            await this.quantityInput.fill('4')
+            await this.addToCartButton.click()
+            await this.viewCart.click()
+        }
 
-
-
-}}
+}
